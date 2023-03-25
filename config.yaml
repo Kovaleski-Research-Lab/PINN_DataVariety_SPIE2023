@@ -1,0 +1,89 @@
+#--------------------------------
+#       General Params
+#--------------------------------
+seed: [True, 1337]
+LRN: True
+train: True
+classifier: False
+model_id: 'mnist_1'
+torch_home: '~/.cache/torch/'
+
+#--------------------------------
+#       Training Params
+#--------------------------------
+batch_size: 8
+num_epochs: 5
+
+accelerator: 'gpu' 
+gpu_config: [True, [0]]
+
+valid_rate: 1
+
+#--------------------------------
+#       All paths
+#--------------------------------
+path_root: '/home/mblgh6/Documents/spie2023/'
+path_data: 'data/'
+path_train: 'train/'
+path_valid: 'valid/'
+path_model: 'my_models/'
+path_results: 'results/'
+path_checkpoint_lrn: '/home/mblgh6/Documents/spie2023/my_models/'
+
+#LRN
+num_layers_lrn: 1
+optimizer_lrn: 'ADAM'
+learning_rate_lrn: 3.e-1
+transfer_learn_lrn: False
+load_checkpoint_lrn: False
+objective_function_lrn: 'mse'
+
+#--------------------------------
+#       Physical Params
+#--------------------------------
+wavelength: 1550.e-9
+#distance : 0.60264
+distance : 0.04
+
+#Propagation
+Nxp: 1080
+Nyp: 1080
+Lxp: 8.96e-3
+Lyp: 8.96e-3
+adaptive: True
+
+#Modulation
+Nxm: 1080
+Nym: 1080
+Lxm: 8.96e-3
+Lym: 8.96e-3
+
+modulator_type: 'phase_only'
+# none, phase_only, amplitude_only, complex
+
+phase_initialization: 0
+# 0 random, 1 analytical lens, 2 uniform
+
+amplitude_initialization: 0
+
+#--------------------------------
+#       Datamodule Params
+#--------------------------------
+which: 'MNIST'
+n_cpus: 30
+
+#data_split: 'mnist_1000perClass'
+#data_split: 'mnist_100perClass'
+#data_split: 'mnist_10perClass'
+#data_split: 'mnist_1perClass'
+data_split: 'mnist_single0' #one
+#data_split: 'mnist_single1' #eight
+#data_split: 'mnist_10_1'
+#data_split: 'mnist_10_8'
+#data_split: 'mnist_100_1'
+#data_split: 'mnist_100_8'
+
+wavefront_transform:
+    phase_initialization_strategy: 0
+
+
